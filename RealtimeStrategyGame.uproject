@@ -1,13 +1,16 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{D0404000-4C42-510C-9472-A69778DCACCE}",
+	"EngineAssociation": "{DC86022E-4316-8ED8-2588-AD97972D0E72}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
 		{
 			"Name": "RealtimeStrategyGame",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	],
 	"Plugins": [
