@@ -5,6 +5,10 @@
 #include "Components/CapsuleComponent.h"
 #include "GameFrameWork/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "InputAction.h"
+#include "InputActionValue.h"
+#include "EnhancedInputComponent.h"
+#include "GameFramework/FloatingPawnMovement.h"
 
 // Sets default values
 APlayerPawn::APlayerPawn()
@@ -22,9 +26,13 @@ APlayerPawn::APlayerPawn()
 	//Create Camera
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 
+	//Create FloatingpawnMovement
+	FloatingPawnMovementComponent = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("FloatingPawnMovement"));
+
 	//Attach Components
 	SpringArm->SetupAttachment(RootComponent);
 	FollowCamera->SetupAttachment(SpringArm);
+
 }
 
 // Called when the game starts or when spawned
@@ -32,7 +40,37 @@ void APlayerPawn::BeginPlay()
 {
 	Super::BeginPlay();
 	
+} 
+
+void APlayerPawn::Move(const FInputActionValue& Value)
+{
+	const FVector2D MovementInput = Value.Get<FVector2D>();
+
+	if (Controller)
+	{
+		const FRotator PlayerRotation = GetControlRotation();
+		const FRotator YawRotator = FRotator(0, PlayerRotation.Yaw, 0);
+
+		const FVector ForwordUnitVector = FRotationMatrix(YawRotator).GetUnitAxis(EAxis::X);
+		const FVector RightUnitVector = FRotationMatrix(YawRotator).GetUnitAxis(EAxis::Y);
+
+		AddMovementInput(ForwordUnitVector, MovementInput.Y);
+		AddMovementInput(RightUnitVector,MovementInput.X);
+	}
 }
+
+void APlayerPawn::Zoom(const FInputActionValue& Value)
+{
+	const float ValueAlpha = Value.Get<float>();
+
+	if (Controller != nullptr)
+	{
+		float DesireOrthorWidth = FollowCamera->OrthoWidth + ValueAlpha * CameraZoomSpeed;
+		DesireOrthorWidth = FMath::Clamp(DesireOrthorWidth,MinOrthoWidth,MaxOrthoWidth);
+		FollowCamera->OrthoWidth = DesireOrthorWidth;
+	}
+}
+
 
 // Called every frame
 void APlayerPawn::Tick(float DeltaTime)
@@ -46,5 +84,10 @@ void APlayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
+	{
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerPawn::Move);
+		EnhancedInputComponent->BindAction(ZoomAction, ETriggerEvent::Triggered, this, &APlayerPawn::Zoom);
+	}
 }
 
