@@ -7,6 +7,9 @@
 #include "TopDownPlayerController.generated.h"
 
 class UInputMappingContext;
+class UInputAction;
+struct FInputActionValue;
+class ABasePawn;
 /**
  * 
  */
@@ -24,4 +27,13 @@ public:
 
 protected:
 	virtual void SetupInputComponent()	override;
+
+	void Select(const FInputActionValue& Value);
+
+private:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, Meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<UInputAction> SelectInputAction;
+
+	UPROPERTY()
+	ABasePawn* SelectPawn = nullptr;
 };
