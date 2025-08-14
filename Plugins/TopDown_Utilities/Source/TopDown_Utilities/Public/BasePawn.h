@@ -4,13 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "SelectInterface.h"
+#include "NavigableInterface.h"
 #include "BasePawn.generated.h"
+
 
 class UCapsuleComponent;
 class UFloatingPawnMovement;
 
 UCLASS()
-class TOPDOWN_UTILITIES_API ABasePawn : public APawn
+class TOPDOWN_UTILITIES_API ABasePawn : public APawn, public ISelectInterface, public INavigableInterface
 {
 	GENERATED_BODY()
 
@@ -34,6 +37,16 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	//Navigation
+	FVector MoveTargetLocation = FVector::ZeroVector;
+	bool bMoving = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite,Category = Navigate)
+	float AcceptanceDistance = 50.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Navigate)
+	float CharacterTurnSpeed = 0.1f;
+
+	void OrientPawnToMoveDirection();
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -44,4 +57,7 @@ public:
 	UFUNCTION()
 	void SetIndicateShow(const bool IsShow);
 	
+	void SelectActor_Implementation(const bool Select) override;
+
+	void MoveToLocation_Implementation(const FVector TargetLocation) override;
 };

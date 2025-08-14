@@ -30,10 +30,15 @@ protected:
 
 	void Select(const FInputActionValue& Value);
 
+	void CommandSelectActor(const FInputActionValue& Value);
+
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, Meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UInputAction> SelectInputAction;
 
+	UPROPERTY(EditAnywhere,BlueprintReadOnly, Category = Input, Meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<UInputAction> CommandInputAction;
+
 	UPROPERTY()
-	ABasePawn* SelectPawn = nullptr;
+	AActor* SelectPawn = nullptr;
 };

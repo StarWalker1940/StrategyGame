@@ -36,6 +36,8 @@ void ATopDownPlayerController::SetupInputComponent()
 	if (EnhancedInputComponent != nullptr)
 	{
 		EnhancedInputComponent->BindAction(SelectInputAction, ETriggerEvent::Completed, this, &ATopDownPlayerController::Select);
+
+		EnhancedInputComponent->BindAction(CommandInputAction, ETriggerEvent::Completed, this, &ATopDownPlayerController::CommandSelectActor);
 	}
 }
 
@@ -44,20 +46,40 @@ void ATopDownPlayerController::Select(const FInputActionValue& Value)
 	FHitResult HitResult;
 
 	GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
-	AActor* HitActor = HitResult.GetActor();
 
-	if (HitActor != nullptr)
+	//deselect previous selected actor
+	if (SelectPawn != nullptr)
 	{
-		UE_LOG(LogTemp, Display, TEXT("selcet Actor = %s"), *HitActor->GetName());
-		if (SelectPawn != nullptr)
+		if (SelectPawn->GetClass()->ImplementsInterface(USelectInterface::StaticClass()))
 		{
-			SelectPawn->SetIndicateShow(false);
+			ISelectInterface::Execute_SelectActor(SelectPawn, false);
 		}
+	}
 
-		 SelectPawn = Cast<ABasePawn>(HitActor);
-		if (SelectPawn != nullptr)
+	SelectPawn = HitResult.GetActor();
+
+	if (SelectPawn != nullptr)
+	{
+		if (SelectPawn->GetClass()->ImplementsInterface(USelectInterface::StaticClass()))
 		{
-			SelectPawn->SetIndicateShow(true);
+			ISelectInterface::Execute_SelectActor(SelectPawn, true);
+		}
+	}
+}
+
+void ATopDownPlayerController::CommandSelectActor(const FInputActionValue& Value)
+{
+	if (SelectPawn != nullptr)
+	{
+		if (SelectPawn->GetClass()->ImplementsInterface(UNavigableInterface::StaticClass()))
+		{
+			FHitResult HitResult;
+			GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
+
+			if (HitResult.bBlockingHit)
+			{
+				INavigableInterface::Execute_MoveToLocation(SelectPawn, HitResult.Location);
+			}
 		}
 	}
 }
