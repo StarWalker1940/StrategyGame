@@ -14,6 +14,9 @@ class ASelectHUD;
 /**
  * 
  */
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSelectActorDelegate,const TArray<AActor*>&, SelectActors);
+
 UCLASS()
 class TOPDOWN_UTILITIES_API ATopDownPlayerController : public APlayerController
 {
@@ -62,4 +65,8 @@ private:
 
 	UPROPERTY()
 	TArray<AActor*> ActorsCanSelect;
+
+	UPROPERTY(BlueprintAssignable,Category = "Delegate")
+	FOnSelectActorDelegate OnActorsSelect;
+
 };

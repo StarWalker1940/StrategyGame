@@ -10,4 +10,4 @@ enum class EResourceType :uint8
 	Gold UMETA(DisplayName = "Gold"),
 	Stone UMETA(DisplayName = "Stone"),
 	Population UMETA(DisplayName = "Population")
-};
+}; 

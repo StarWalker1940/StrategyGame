@@ -125,8 +125,9 @@ void ATopDownPlayerController::SelectMutiActors()
 		}
 
 		SelectActors.Empty();
+		ActorsCanSelect.Empty();
 		SelectActors = SelectHUD->GetSelctActors();
-
+		 
 		//Show SelectActors
 		for (AActor* SomeActor : SelectActors)
 		{
@@ -138,6 +139,11 @@ void ATopDownPlayerController::SelectMutiActors()
 					ActorsCanSelect.AddUnique(SomeActor);
 				}
 			}
+		}
+
+		if (ActorsCanSelect.Num() > 0)
+		{
+			OnActorsSelect.Broadcast(ActorsCanSelect);
 		}
 	}
 }
