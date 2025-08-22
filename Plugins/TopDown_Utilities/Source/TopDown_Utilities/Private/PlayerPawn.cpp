@@ -77,6 +77,7 @@ void APlayerPawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	EdgeScollWithMouse();
 }
 
 // Called to bind functionality to input
@@ -88,6 +89,56 @@ void APlayerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	{
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerPawn::Move);
 		EnhancedInputComponent->BindAction(ZoomAction, ETriggerEvent::Triggered, this, &APlayerPawn::Zoom);
+	}
+}
+
+void APlayerPawn::EdgeScollWithMouse()
+{
+	APlayerController* PC = Cast<APlayerController>(Controller);
+	if (PC == nullptr)
+		return;
+
+	double MouseX = 0;
+	double MouseY = 0;
+	PC->GetMousePosition(MouseX, MouseY);
+
+	if (GEngine && GEngine->GameViewport)
+	{
+		FVector2D ScreenSize;
+		GEngine->GameViewport->GetViewportSize(ScreenSize);
+
+		float EdgeThreshold = 100.f;
+		FVector2D MoveValue = FVector2D::ZeroVector;
+
+		if (MouseX < EdgeThreshold)
+		{
+			UE_LOG(LogTemp, Display, TEXT("向左移动"));
+			MoveValue.X = -1.0f;
+		}
+
+		if (MouseX > (ScreenSize.X - EdgeThreshold))
+		{
+			UE_LOG(LogTemp, Display, TEXT("向右移动"));
+			MoveValue.X = 1.0f;
+		}
+
+		if (MouseY < EdgeThreshold)
+		{
+			UE_LOG(LogTemp, Display, TEXT("向上移动"));
+			MoveValue.Y = 1.0f;
+		}
+
+		if (MouseY > (ScreenSize.Y - EdgeThreshold))
+		{
+			UE_LOG(LogTemp, Display, TEXT("向下移动"));
+			MoveValue.Y = -1.0f;
+		}
+
+		if (MoveValue.IsZero())
+		{
+			return;
+		}
+		Move(FInputActionValue(MoveValue));
 	}
 }
 

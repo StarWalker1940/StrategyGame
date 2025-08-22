@@ -43,7 +43,6 @@ void ATopDownPlayerController::SetupInputComponent()
 
 	if (EnhancedInputComponent != nullptr)
 	{
-		EnhancedInputComponent->BindAction(SelectInputAction, ETriggerEvent::Completed, this, &ATopDownPlayerController::Select);
 
 		EnhancedInputComponent->BindAction(CommandInputAction, ETriggerEvent::Completed, this, &ATopDownPlayerController::CommandSelectActor);
 	
@@ -53,44 +52,24 @@ void ATopDownPlayerController::SetupInputComponent()
 	}
 }
 
-void ATopDownPlayerController::Select(const FInputActionValue& Value)
-{
-	FHitResult HitResult;
-
-	GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
-
-	//deselect previous selected actor
-	if (SelectPawn != nullptr)
-	{
-		if (SelectPawn->GetClass()->ImplementsInterface(USelectInterface::StaticClass()))
-		{
-			ISelectInterface::Execute_SelectActor(SelectPawn, false);
-		}
-	}
-
-	SelectPawn = HitResult.GetActor();
-
-	if (SelectPawn != nullptr)
-	{
-		if (SelectPawn->GetClass()->ImplementsInterface(USelectInterface::StaticClass()))
-		{
-			ISelectInterface::Execute_SelectActor(SelectPawn, true);
-		}
-	}
-}
 
 void ATopDownPlayerController::CommandSelectActor(const FInputActionValue& Value)
 {
-	if (SelectPawn != nullptr)
+	FHitResult HitResult;
+	GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
+	
+	if (HitResult.bBlockingHit)
 	{
-		if (SelectPawn->GetClass()->ImplementsInterface(UNavigableInterface::StaticClass()))
+		if (ActorsCanSelect.Num() > 0)
 		{
-			FHitResult HitResult;
-			GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
-
-			if (HitResult.bBlockingHit)
+			int i = - (ActorsCanSelect.Num() / 2);
+			for (AActor* act : ActorsCanSelect)
 			{
-				INavigableInterface::Execute_MoveToLocation(SelectPawn, HitResult.Location);
+				if (act->GetClass()->ImplementsInterface(UNavigableInterface::StaticClass()))
+				{
+					INavigableInterface::Execute_MoveToLocation(act, HitResult.Location + FVector(0, 100 * i, 0));
+					i++;
+				}
 			}
 		}
 	}
@@ -145,6 +124,7 @@ void ATopDownPlayerController::SelectMutiActors()
 			}
 		}
 
+		SelectActors.Empty();
 		SelectActors = SelectHUD->GetSelctActors();
 
 		//Show SelectActors
@@ -155,6 +135,7 @@ void ATopDownPlayerController::SelectMutiActors()
 				if (SomeActor->GetClass()->ImplementsInterface(USelectInterface::StaticClass()))
 				{
 					ISelectInterface::Execute_SelectActor(SomeActor, true);
+					ActorsCanSelect.AddUnique(SomeActor);
 				}
 			}
 		}

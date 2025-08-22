@@ -58,6 +58,9 @@ protected:
 	void Move(const FInputActionValue& Value);
 
 	void Zoom(const FInputActionValue& Value);
+
+	//边缘移动
+	void EdgeScollWithMouse();
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -65,6 +68,5 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
-	
+
 };

@@ -31,7 +31,6 @@ protected:
 
 	virtual void SetupInputComponent()	override;
 
-	void Select(const FInputActionValue& Value);
 
 	void CommandSelectActor(const FInputActionValue& Value);
 
@@ -60,4 +59,7 @@ private:
 	FVector2D SelectBeginLoc;
 
 	TArray<AActor*> SelectActors;
+
+	UPROPERTY()
+	TArray<AActor*> ActorsCanSelect;
 };

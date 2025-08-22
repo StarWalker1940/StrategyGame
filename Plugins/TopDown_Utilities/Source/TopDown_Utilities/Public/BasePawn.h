@@ -47,6 +47,7 @@ protected:
 	float CharacterTurnSpeed = 0.1f;
 
 	void OrientPawnToMoveDirection();
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

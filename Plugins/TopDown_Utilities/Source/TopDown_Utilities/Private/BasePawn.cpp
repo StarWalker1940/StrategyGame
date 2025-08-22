@@ -67,6 +67,7 @@ void ABasePawn::OrientPawnToMoveDirection()
 	SetActorRotation(newRotator);
 }
 
+
 // Called every frame
 void ABasePawn::Tick(float DeltaTime)
 {
