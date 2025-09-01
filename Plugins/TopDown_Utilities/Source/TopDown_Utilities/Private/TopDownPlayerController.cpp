@@ -142,7 +142,7 @@ void ATopDownPlayerController::SelectMutiActors()
 		}
 
 		if (ActorsCanSelect.Num() > 0)
-		{
+		{ 
 			OnActorsSelect.Broadcast(ActorsCanSelect);
 		}
 	}

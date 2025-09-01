@@ -112,25 +112,21 @@ void APlayerPawn::EdgeScollWithMouse()
 
 		if (MouseX < EdgeThreshold)
 		{
-			UE_LOG(LogTemp, Display, TEXT("向左移动"));
 			MoveValue.X = -1.0f;
 		}
 
 		if (MouseX > (ScreenSize.X - EdgeThreshold))
 		{
-			UE_LOG(LogTemp, Display, TEXT("向右移动"));
 			MoveValue.X = 1.0f;
 		}
 
 		if (MouseY < EdgeThreshold)
 		{
-			UE_LOG(LogTemp, Display, TEXT("向上移动"));
 			MoveValue.Y = 1.0f;
 		}
 
 		if (MouseY > (ScreenSize.Y - EdgeThreshold))
 		{
-			UE_LOG(LogTemp, Display, TEXT("向下移动"));
 			MoveValue.Y = -1.0f;
 		}
 

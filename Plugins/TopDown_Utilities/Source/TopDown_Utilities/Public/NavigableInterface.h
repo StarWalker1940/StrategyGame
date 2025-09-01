@@ -23,6 +23,6 @@ class TOPDOWN_UTILITIES_API INavigableInterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Select Interface")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = SelectInterface)
 	void MoveToLocation(const FVector TargetLocation);
 };

@@ -1,0 +1,613 @@
+{
+	"folders": [
+		{
+			"name": "RealtimeStrategyGame",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "F:\\UE_5.4.3_IB"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "RealtimeStrategyGame Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Debug",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Debug",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"RealtimeStrategyGame Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Debug",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"DebugGame",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"DebugGame",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"RealtimeStrategyGame Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"DebugGame",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Development",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Development",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"RealtimeStrategyGame Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Development",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Test",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Test",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"RealtimeStrategyGame Win64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Test",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Shipping",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Shipping",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"RealtimeStrategyGame Win64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGame Win64 Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"RealtimeStrategyGame",
+					"Win64",
+					"Shipping",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGameEditor Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGameEditor",
+					"Win64",
+					"Debug",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGameEditor Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGameEditor",
+					"Win64",
+					"Debug",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"RealtimeStrategyGameEditor Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGameEditor Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"RealtimeStrategyGameEditor",
+					"Win64",
+					"Debug",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGameEditor Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGameEditor",
+					"Win64",
+					"DebugGame",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGameEditor Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGameEditor",
+					"Win64",
+					"DebugGame",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"RealtimeStrategyGameEditor Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGameEditor Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"RealtimeStrategyGameEditor",
+					"Win64",
+					"DebugGame",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGameEditor Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGameEditor",
+					"Win64",
+					"Development",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGameEditor Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"RealtimeStrategyGameEditor",
+					"Win64",
+					"Development",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"RealtimeStrategyGameEditor Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"label": "RealtimeStrategyGameEditor Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"RealtimeStrategyGameEditor",
+					"Win64",
+					"Development",
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "F:\\UE_5.4.3_IB"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch RealtimeStrategyGame (Debug)",
+				"request": "launch",
+				"program": "F:\\Project\\StrategyGame\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"preLaunchTask": "RealtimeStrategyGame Win64 Debug Build",
+				"args": [
+				],
+				"cwd": "F:\\UE_5.4.3_IB",
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"type": "cppvsdbg",
+				"visualizerFile": "F:\\UE_5.4.3_IB\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"E:\\UnrealEngine-5.4.3-release": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"name": "Launch RealtimeStrategyGame (DebugGame)",
+				"request": "launch",
+				"program": "F:\\Project\\StrategyGame\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"preLaunchTask": "RealtimeStrategyGame Win64 DebugGame Build",
+				"args": [
+				],
+				"cwd": "F:\\UE_5.4.3_IB",
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"type": "cppvsdbg",
+				"visualizerFile": "F:\\UE_5.4.3_IB\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"E:\\UnrealEngine-5.4.3-release": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"name": "Launch RealtimeStrategyGame (Development)",
+				"request": "launch",
+				"program": "F:\\Project\\StrategyGame\\Binaries\\Win64\\UnrealGame.exe",
+				"preLaunchTask": "RealtimeStrategyGame Win64 Development Build",
+				"args": [
+				],
+				"cwd": "F:\\UE_5.4.3_IB",
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"type": "cppvsdbg",
+				"visualizerFile": "F:\\UE_5.4.3_IB\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"E:\\UnrealEngine-5.4.3-release": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"name": "Launch RealtimeStrategyGame (Test)",
+				"request": "launch",
+				"program": "F:\\Project\\StrategyGame\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"preLaunchTask": "RealtimeStrategyGame Win64 Test Build",
+				"args": [
+				],
+				"cwd": "F:\\UE_5.4.3_IB",
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"type": "cppvsdbg",
+				"visualizerFile": "F:\\UE_5.4.3_IB\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"E:\\UnrealEngine-5.4.3-release": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"name": "Launch RealtimeStrategyGame (Shipping)",
+				"request": "launch",
+				"program": "F:\\Project\\StrategyGame\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"preLaunchTask": "RealtimeStrategyGame Win64 Shipping Build",
+				"args": [
+				],
+				"cwd": "F:\\UE_5.4.3_IB",
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"type": "cppvsdbg",
+				"visualizerFile": "F:\\UE_5.4.3_IB\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"E:\\UnrealEngine-5.4.3-release": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"name": "Launch RealtimeStrategyGameEditor (Debug)",
+				"request": "launch",
+				"program": "F:\\UE_5.4.3_IB\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"preLaunchTask": "RealtimeStrategyGameEditor Win64 Debug Build",
+				"args": [
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject"
+				],
+				"cwd": "F:\\UE_5.4.3_IB",
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"type": "cppvsdbg",
+				"visualizerFile": "F:\\UE_5.4.3_IB\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"E:\\UnrealEngine-5.4.3-release": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"name": "Launch RealtimeStrategyGameEditor (DebugGame)",
+				"request": "launch",
+				"program": "F:\\UE_5.4.3_IB\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"preLaunchTask": "RealtimeStrategyGameEditor Win64 DebugGame Build",
+				"args": [
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject"
+				],
+				"cwd": "F:\\UE_5.4.3_IB",
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"type": "cppvsdbg",
+				"visualizerFile": "F:\\UE_5.4.3_IB\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"E:\\UnrealEngine-5.4.3-release": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"name": "Launch RealtimeStrategyGameEditor (Development)",
+				"request": "launch",
+				"program": "F:\\UE_5.4.3_IB\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"preLaunchTask": "RealtimeStrategyGameEditor Win64 Development Build",
+				"args": [
+					"F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject"
+				],
+				"cwd": "F:\\UE_5.4.3_IB",
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"type": "cppvsdbg",
+				"visualizerFile": "F:\\UE_5.4.3_IB\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"E:\\UnrealEngine-5.4.3-release": "F:\\UE_5.4.3_IB"
+				}
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
+				"program": "F:\\UE_5.4.3_IB\\Engine\\Build\\BatchFiles\\RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=F:\\Project\\StrategyGame\\RealtimeStrategyGame.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "internalConsole",
+				"stopAtEntry": false,
+				"cwd": "F:\\UE_5.4.3_IB"
+			}
+		]
+	}
+}

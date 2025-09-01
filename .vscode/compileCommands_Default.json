@@ -1,0 +1,258 @@
+[
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\BaseBuilding.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\BasePawn.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\CommonEnum.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\Faction.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\NavigableInterface.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\PawnData.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\PawnTypeInterface.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\PlayerPawn.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\ResourceData.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\SelectHUD.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\SelectInterface.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\TopDownPlayerController.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\TopDown_Utilities.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Private\\TopGameModeBase.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\BaseBuilding.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\BasePawn.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\CommonEnum.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\Faction.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\NavigableInterface.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\PawnData.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\PawnTypeInterface.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\PlayerPawn.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\ResourceData.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\SelectHUD.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\SelectInterface.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\TopDownPlayerController.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\TopDown_Utilities.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\Public\\TopGameModeBase.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Plugins\\TopDown_Utilities\\Source\\TopDown_Utilities\\TopDown_Utilities.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\TopDown_Utilities.25.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Source\\RealtimeStrategyGame\\RealtimeStrategyGame.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\RealtimeStrategyGame.1.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Source\\RealtimeStrategyGame\\RealtimeStrategyGame.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\RealtimeStrategyGame.1.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	},
+	{
+		"file": "F:\\Project\\StrategyGame\\Source\\RealtimeStrategyGame\\RealtimeStrategyGame.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@F:\\Project\\StrategyGame\\.vscode\\compileCommands_Default\\RealtimeStrategyGame.1.rsp"
+		],
+		"directory": "F:\\UE_5.4.3_IB\\Engine\\Source"
+	}
+]

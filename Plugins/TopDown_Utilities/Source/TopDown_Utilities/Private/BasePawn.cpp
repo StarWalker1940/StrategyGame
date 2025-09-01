@@ -43,6 +43,21 @@ void ABasePawn::BeginPlay()
 	
 }
 
+EUnitType ABasePawn::GetPawnType_Implementation()
+{
+	return pawnType;
+}
+
+int32 ABasePawn::GetFactionID_Implementation()
+{
+	return FactionID;
+}
+
+void ABasePawn::SetFactionID_Implementation(int32 val)
+{
+	FactionID = val;
+}
+
 void ABasePawn::OrientPawnToMoveDirection()
 {
 	if (!bMoving)

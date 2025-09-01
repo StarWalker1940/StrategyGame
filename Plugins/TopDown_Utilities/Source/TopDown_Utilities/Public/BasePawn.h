@@ -6,6 +6,9 @@
 #include "GameFramework/Pawn.h"
 #include "SelectInterface.h"
 #include "NavigableInterface.h"
+#include "CommonEnum.h"
+#include "PawnTypeInterface.h"
+#include "FactionInterface.h"
 #include "BasePawn.generated.h"
 
 
@@ -13,7 +16,7 @@ class UCapsuleComponent;
 class UFloatingPawnMovement;
 
 UCLASS()
-class TOPDOWN_UTILITIES_API ABasePawn : public APawn, public ISelectInterface, public INavigableInterface
+class TOPDOWN_UTILITIES_API ABasePawn : public APawn, public ISelectInterface, public INavigableInterface, public IPawnTypeInterface, public IFactionInterface
 {
 	GENERATED_BODY()
 
@@ -45,6 +48,17 @@ protected:
 	float AcceptanceDistance = 50.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Navigate)
 	float CharacterTurnSpeed = 0.1f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite,Category = Pawn)
+	EUnitType pawnType = EUnitType::Villager;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Faction)
+	int32 FactionID = 0;
+
+	EUnitType GetPawnType_Implementation() override;
+
+	int32 GetFactionID_Implementation() override;
+
+	void SetFactionID_Implementation(int32 val) override;
+
 
 	void OrientPawnToMoveDirection();
 
