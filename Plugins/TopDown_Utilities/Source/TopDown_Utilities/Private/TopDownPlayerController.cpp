@@ -49,9 +49,20 @@ void ATopDownPlayerController::SetupInputComponent()
 		EnhancedInputComponent->BindAction(SelectInputAction, ETriggerEvent::Started, this, &ATopDownPlayerController::SelectBegin);
 		EnhancedInputComponent->BindAction(SelectInputAction, ETriggerEvent::Triggered, this, &ATopDownPlayerController::SelectOnGoing);
 		EnhancedInputComponent->BindAction(SelectInputAction, ETriggerEvent::Completed, this, &ATopDownPlayerController::SelectEnd);
+		EnhancedInputComponent->BindAction(SelectInputAction, ETriggerEvent::Completed, this, &ATopDownPlayerController::SelectSingle);
 	}
 }
 
+
+int32 ATopDownPlayerController::GetFactionID_Implementation()
+{
+	return FactionID;
+}
+
+void ATopDownPlayerController::SetFactionID_Implementation(int32 val)
+{
+	FactionID = val;
+}
 
 void ATopDownPlayerController::CommandSelectActor(const FInputActionValue& Value)
 {
@@ -65,6 +76,12 @@ void ATopDownPlayerController::CommandSelectActor(const FInputActionValue& Value
 			int i = - (ActorsCanSelect.Num() / 2);
 			for (AActor* act : ActorsCanSelect)
 			{
+				if (act->GetClass()->ImplementsInterface(UFactionInterface::StaticClass()))
+				{
+					int32 FacID = IFactionInterface::Execute_GetFactionID(act);
+					if (FacID != FactionID)
+						continue;
+				}
 				if (act->GetClass()->ImplementsInterface(UNavigableInterface::StaticClass()))
 				{
 					INavigableInterface::Execute_MoveToLocation(act, HitResult.Location + FVector(0, 100 * i, 0));
@@ -108,31 +125,58 @@ void ATopDownPlayerController::SelectEnd(const FInputActionValue& Value)
 	}
 }
 
+void ATopDownPlayerController::SelectSingle()
+{
+	if (SelectHUD)
+	{
+		FTimerHandle TH_SelectSingle;
+		GetWorld()->GetTimerManager().SetTimer(TH_SelectSingle, this, &ATopDownPlayerController::SelectSingleImp, 0.1f, false);
+		
+	}
+}
+
+void ATopDownPlayerController::SelectSingleImp()
+{
+	if (ActorsCanSelect.Num() == 0)
+	{
+		FHitResult HitResult;
+		GetHitResultUnderCursor(ECollisionChannel::ECC_Camera, false, HitResult);
+		if (HitResult.GetActor() != nullptr)
+		{
+			if (HitResult.GetActor()->GetClass()->ImplementsInterface(USelectInterface::StaticClass()))
+			{
+				ISelectInterface::Execute_SelectActor(HitResult.GetActor(), true);
+				ActorsCanSelect.AddUnique(HitResult.GetActor());
+				if (ActorsCanSelect.Num() > 0)
+				{
+					OnActorsSelect.Broadcast(ActorsCanSelect);
+				}
+			}
+		}
+	}
+}
+
 void ATopDownPlayerController::SelectMutiActors()
 {
 	if (SelectHUD)
 	{
-		//Deselect SelectActors
-		for (AActor* SomeActor : SelectActors)
-		{
-			if (SomeActor != nullptr)
-			{
-				if (SomeActor->GetClass()->ImplementsInterface(USelectInterface::StaticClass()))
-				{
-					ISelectInterface::Execute_SelectActor(SomeActor, false);
-				}
-			}
-		}
+		DeSelectActors();
 
 		SelectActors.Empty();
 		ActorsCanSelect.Empty();
 		SelectActors = SelectHUD->GetSelctActors();
 		 
 		//Show SelectActors
-		for (AActor* SomeActor : SelectActors)
+		for (ABasePawn* SomeActor : SelectActors)
 		{
 			if (SomeActor != nullptr)
 			{
+				if (SomeActor->GetClass()->ImplementsInterface(UFactionInterface::StaticClass()))
+				{
+					int32 FacID = IFactionInterface::Execute_GetFactionID(SomeActor);
+					if (FacID != FactionID)
+						continue;
+				}
 				if (SomeActor->GetClass()->ImplementsInterface(USelectInterface::StaticClass()))
 				{
 					ISelectInterface::Execute_SelectActor(SomeActor, true);
@@ -144,6 +188,21 @@ void ATopDownPlayerController::SelectMutiActors()
 		if (ActorsCanSelect.Num() > 0)
 		{ 
 			OnActorsSelect.Broadcast(ActorsCanSelect);
+		}
+	}
+}
+
+//Deselect ActorsCanSelect
+void ATopDownPlayerController::DeSelectActors()
+{
+	for (AActor* SomeActor : ActorsCanSelect)
+	{
+		if (SomeActor != nullptr)
+		{
+			if (SomeActor->GetClass()->ImplementsInterface(USelectInterface::StaticClass()))
+			{
+				ISelectInterface::Execute_SelectActor(SomeActor, false);
+			}
 		}
 	}
 }

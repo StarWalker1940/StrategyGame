@@ -2,6 +2,7 @@
 
 
 #include "SelectHUD.h"
+#include "BasePawn.h"
 
 void ASelectHUD::DrawHUD()
 {
@@ -25,7 +26,7 @@ void ASelectHUD::SelectActorsInRect()
 	FVector2D SecondLoc = SelectBeginLoc + SelectAreaSize;
 
 	RectActors.Empty();
-	GetActorsInSelectionRectangle(FirstLoc, SecondLoc, RectActors, false);
+	GetActorsInSelectionRectangle<ABasePawn>(FirstLoc, SecondLoc, RectActors, false);
 }
 
 void ASelectHUD::SetShowDrawArea(const FVector2D BeginLoc, const FVector2D Size)
@@ -41,7 +42,7 @@ void ASelectHUD::SetHideDrawArea()
 	bBeginSelectAction = true;
 }
 
-TArray<AActor*> ASelectHUD::GetSelctActors()
+TArray<ABasePawn*> ASelectHUD::GetSelctActors()
 {
 	return RectActors;
 }

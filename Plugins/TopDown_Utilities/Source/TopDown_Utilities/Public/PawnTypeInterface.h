@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
 #include "CommonEnum.h"
+#include "BaseBuilding.h"
 #include "PawnTypeInterface.generated.h"
 
 // This class does not need to be modified.
@@ -26,4 +27,7 @@ public:
 	
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent,Category = "PawnTpye")
 	EUnitType GetPawnType();
+
+	UFUNCTION(BlueprintCallable,BlueprintNativeEvent,Category = "BuildOption")
+	TArray<TSubclassOf<ABaseBuilding>> GetBuildOption();
 };

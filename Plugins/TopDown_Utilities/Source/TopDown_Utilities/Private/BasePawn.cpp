@@ -58,6 +58,11 @@ void ABasePawn::SetFactionID_Implementation(int32 val)
 	FactionID = val;
 }
 
+TArray<TSubclassOf<ABaseBuilding>> ABasePawn::GetBuildOption_Implementation()
+{
+	return BuildingOptions;
+}
+
 void ABasePawn::OrientPawnToMoveDirection()
 {
 	if (!bMoving)

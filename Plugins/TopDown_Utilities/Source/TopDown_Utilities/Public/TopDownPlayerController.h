@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "FactionInterface.h"
 #include "TopDownPlayerController.generated.h"
 
 class UInputMappingContext;
@@ -15,10 +16,11 @@ class ASelectHUD;
  * 
  */
 
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSelectActorDelegate,const TArray<AActor*>&, SelectActors);
 
 UCLASS()
-class TOPDOWN_UTILITIES_API ATopDownPlayerController : public APlayerController
+class TOPDOWN_UTILITIES_API ATopDownPlayerController : public APlayerController,public IFactionInterface
 {
 	GENERATED_BODY()
 	
@@ -34,6 +36,12 @@ protected:
 
 	virtual void SetupInputComponent()	override;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Faction)
+	int32 FactionID = 0;
+
+	int32 GetFactionID_Implementation() override;
+
+	void SetFactionID_Implementation(int32 val) override;
 
 	void CommandSelectActor(const FInputActionValue& Value);
 
@@ -43,7 +51,13 @@ protected:
 
 	void SelectEnd(const FInputActionValue& Value);
 
-	void SelectMutiActors();
+	void SelectSingle();
+
+	void SelectSingleImp();
+
+	void SelectMutiActors(); 
+
+	void DeSelectActors();
 
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, Meta = (AllowPrivateAccess = "true"))
@@ -61,7 +75,7 @@ private:
 	UPROPERTY()
 	FVector2D SelectBeginLoc;
 
-	TArray<AActor*> SelectActors;
+	TArray<ABasePawn*> SelectActors;
 
 	UPROPERTY()
 	TArray<AActor*> ActorsCanSelect;

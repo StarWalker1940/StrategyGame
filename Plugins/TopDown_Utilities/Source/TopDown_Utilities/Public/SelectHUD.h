@@ -6,6 +6,7 @@
 #include "GameFramework/HUD.h"
 #include "SelectHUD.generated.h"
 
+class ABasePawn;
 /**
  * 
  */
@@ -23,7 +24,7 @@ private:
 	
 	FLinearColor SelectAreaColor = FLinearColor(1.0f, 0.f, 0.f, 0.2f);
 
-	TArray<AActor*> RectActors;
+	TArray<ABasePawn*> RectActors;
 
 	bool bBeginSelectAction = false;
 
@@ -37,5 +38,5 @@ public:
 
 	void SetHideDrawArea();
 
-	TArray<AActor*> GetSelctActors();
+	TArray<ABasePawn*> GetSelctActors();
 };

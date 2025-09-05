@@ -52,6 +52,8 @@ protected:
 	EUnitType pawnType = EUnitType::Villager;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Faction)
 	int32 FactionID = 0;
+	UPROPERTY(BlueprintReadWrite,Category = BuildingOption)
+	TArray<TSubclassOf<ABaseBuilding>> BuildingOptions;
 
 	EUnitType GetPawnType_Implementation() override;
 
@@ -59,6 +61,7 @@ protected:
 
 	void SetFactionID_Implementation(int32 val) override;
 
+	TArray<TSubclassOf<ABaseBuilding>> GetBuildOption_Implementation()override;
 
 	void OrientPawnToMoveDirection();
 

@@ -16,13 +16,13 @@ struct FPawnData : public FTableRowBase
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Pawn")
 	FString DisplayName;
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Pawn")
-	TSoftObjectPtr< UTexture2D> Texture;
+	UTexture2D* Texture; 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite, Category = "Pawn")
 	int32 Health;
 
 	FPawnData() : PawnType(EUnitType::Villager), DisplayName(""), Texture(nullptr), Health(100) {}
 
-	FPawnData(EUnitType T, FString Name, TSoftObjectPtr< UTexture2D> Tex, int32 Heal)
+	FPawnData(EUnitType T, FString Name, UTexture2D* Tex, int32 Heal)
 		: PawnType(T), DisplayName(Name), Texture(Tex), Health(Heal) {
 	}
 };
